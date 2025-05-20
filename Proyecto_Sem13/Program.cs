@@ -127,5 +127,10 @@ namespace Proyecto_Sem13
             while (numAlt != numIng);
             Console.ReadKey();
         }
+        static void Salida()
+        {
+            Console.WriteLine("\t\t\t\t*********** ESPERAMOS VERTE DE NUEVO ***********\t\t\t\t \n");
+            Console.WriteLine("\t\t\t\t\t*********** ADIOS ***********\t\t\t\t\t\t \n");
+        }
     }
 }

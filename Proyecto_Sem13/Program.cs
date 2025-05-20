@@ -57,7 +57,7 @@ namespace Proyecto_Sem13
                     switch (juego)
                     {
                         case 1:
-                            
+                            JuegoAdivinalaPalabra();
                             break;
                         case 2:
                             

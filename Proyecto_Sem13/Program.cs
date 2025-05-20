@@ -59,6 +59,10 @@ namespace Proyecto_Sem13
                     {
                         case 0:
                             
+                            Console.Write("SALIENDO.....");
+                            Thread.Sleep(1000);
+                            Console.Clear();
+                            Salida();
                             break;
                         case 1:
                             AdivinaLaPalabra();
@@ -89,6 +93,45 @@ namespace Proyecto_Sem13
             Console.WriteLine("✓ = Letra correcta en posición correcta");
             Console.WriteLine("~ = Letra correcta en posición incorrecta");
             Console.WriteLine("× = Letra no existe en la palabra\n");
+            Console.ReadKey();
+        }
+        static void AdivinaElNumero()
+        {
+            int numAlt, numIng;
+            Random R = new Random();
+            numAlt = R.Next(1, 21);
+            Console.WriteLine(numAlt);
+            do
+            {
+                Console.WriteLine("Ingrese un número del 1 al 20: ");
+                numIng = int.Parse(Console.ReadLine());
+                if (numIng == numAlt)//adivino
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("ADIVINASTE!!!! ");
+                    Console.Beep(700, 400);
+                    Console.Beep(800, 500);
+                    Console.Beep(900, 800);
+                    Console.Beep(1000, 1000);
+                    //ESTABLECEMOS NUEVAMENTE EL COLOR DE LA CONSOLA 
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Black;
+
+                }
+                else
+                {
+                    if (numIng < numAlt)
+                    {
+                        Console.WriteLine("INGRESO UN N° MAYOR AL GENERADO");
+                    }
+                    else
+                    {
+                        Console.WriteLine("INGRESO UN N° MENOR AL GENERADO");
+                    }
+                }
+
+            }
+            while (numAlt != numIng);
             Console.ReadKey();
         }
         static void Salida()

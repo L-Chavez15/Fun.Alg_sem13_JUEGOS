@@ -11,8 +11,9 @@ namespace Proyecto_Sem13
     {
         static void Main(string[] args)
         {
+            Interfas();
         }
-        static void Main()
+        static void Interfas()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(" ------------------------------------------------------------------------");
@@ -61,7 +62,21 @@ namespace Proyecto_Sem13
                 default:
                     break;
             }
-
+        }
+        static void AdivinaLaPalabra()
+        {
+            Console.WriteLine("Adivina la palabra de 5 letras");
+            Console.WriteLine("Tienes 6 intentos\n");
+            Console.WriteLine("Pistas:");
+            Console.WriteLine("✓ = Letra correcta en posición correcta");
+            Console.WriteLine("~ = Letra correcta en posición incorrecta");
+            Console.WriteLine("× = Letra no existe en la palabra\n");
+            Console.ReadKey();
+        }
+        static void Salida()
+        {
+            Console.WriteLine("\t\t\t\t*********** ESPERAMOS VERTE DE NUEVO ***********\t\t\t\t \n");
+            Console.WriteLine("\t\t\t\t\t*********** ADIOS ***********\t\t\t\t\t\t \n");
         }
            
     }

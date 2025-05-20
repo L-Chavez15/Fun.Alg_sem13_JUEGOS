@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Proyecto_Sem13
@@ -56,11 +57,17 @@ namespace Proyecto_Sem13
                     Console.Clear();
                     switch (juego)
                     {
+                        case 0:
+                            Console.Write("SALIENDO.....");
+                            Thread.Sleep(1000);
+                            Console.Clear();
+                            Salida();
+                            ; break;
                         case 1:
                             JuegoAdivinalaPalabra();
                             break;
                         case 2:
-                            
+                            AdivinaElNumero();
                             break;
                         case 3:
                             
@@ -71,10 +78,12 @@ namespace Proyecto_Sem13
                     }
                     break;
                 case 2:
-                    
+                    Salida();
                     break;
                 default:
-                    
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\t\t\t\t******** ERROR, FALLA EN EL SISTEMA :C ******** ");
+                    Console.ReadKey();
                     break;
             }
         }

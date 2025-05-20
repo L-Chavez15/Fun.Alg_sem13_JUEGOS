@@ -30,8 +30,11 @@ namespace Proyecto_Sem13
             Console.WriteLine("|*                                                                      *|");
             Console.WriteLine("|************************************************************************|");
             Console.WriteLine(" ------------------------------------------------------------------------\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Write("");
             int inicio = int.Parse(Console.ReadLine());
+     
             Console.Clear();
 
             switch (inicio)
@@ -53,6 +56,8 @@ namespace Proyecto_Sem13
                     Console.WriteLine("|                                                                        |");
                     Console.WriteLine(" ------------------------------------------------------------------------\n");
                     Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Black;
                     int juego = int.Parse(Console.ReadLine());
                     Console.Clear();
                     switch (juego)
@@ -106,7 +111,7 @@ namespace Proyecto_Sem13
             {
                 Console.WriteLine("Ingrese un número del 1 al 20: ");
                 numIng = int.Parse(Console.ReadLine());
-                if (numIng == numAlt)//adivino
+                if (numIng == numAlt)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("ADIVINASTE!!!! ");
@@ -114,7 +119,7 @@ namespace Proyecto_Sem13
                     Console.Beep(800, 500);
                     Console.Beep(900, 800);
                     Console.Beep(1000, 1000);
-                    //ESTABLECEMOS NUEVAMENTE EL COLOR DE LA CONSOLA 
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Black;
 

@@ -30,6 +30,7 @@ namespace Proyecto_Sem13
             Console.WriteLine(" ------------------------------------------------------------------------\n");
             Console.Write("");
             int inicio = int.Parse(Console.ReadLine());
+            Console.Clear();
         }
     }
 }

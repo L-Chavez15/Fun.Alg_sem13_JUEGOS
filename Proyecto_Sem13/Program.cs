@@ -55,11 +55,29 @@ namespace Proyecto_Sem13
                     Console.WriteLine("");
                     int juego = int.Parse(Console.ReadLine());
                     Console.Clear();
+                    switch (juego)
+                    {
+                        case 0:
+                            
+                            break;
+                        case 1:
+                            AdivinaLaPalabra();
+                            break;
+                        case 2:
+                            break;
+                        case 3: 
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 2:
-                    break;
-                
+                    Salida();
+                break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\t\t\t\t******** ERROR, FALLA EN EL SISTEMA :C ******** ");
+                    Console.ReadKey();
                     break;
             }
         }

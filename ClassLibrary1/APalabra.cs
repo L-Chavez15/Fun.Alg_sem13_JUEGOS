@@ -37,7 +37,9 @@ namespace ClassLibrary1
                 {
                     if (palabraSeleccionada==op)
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("FELICIDADES, HAS GANADO");
+                        Console.ResetColor();
                         Console.ReadKey();
                         break;
                     } else
@@ -56,63 +58,20 @@ namespace ClassLibrary1
                             }
                             if (e)
                             {
+                                Console.ForegroundColor = ConsoleColor.Green;
                                 Console.Write("v");
+                                Console.ResetColor();
                             } else
                             {
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.Write("x");
+                                Console.ResetColor();
                             }
                         }
                         Console.WriteLine();
                     }
                 }
             }
-
-
-
-            //Console.WriteLine("pistas: ");
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    if (op[i] == palabraSeleccionada[i])
-            //    {
-            //        Console.ForegroundColor = ConsoleColor.Green;
-            //        Console.Write(op[i]);
-            //        Console.ResetColor();
-            //    }
-            //    else if (palabraSeleccionada.Contains(op[i]))
-            //    {
-            //        Console.ForegroundColor = ConsoleColor.Yellow;
-            //        Console.Write(op[i]);
-            //        Console.ResetColor();
-            //    }
-            //    else
-            //    {
-            //        Console.ForegroundColor = ConsoleColor.Red;
-            //        Console.Write(op[i]);
-            //        Console.ResetColor();
-            //    }
-            //}
-            //Console.WriteLine("\n");
-            //if (op == palabraSeleccionada)
-            //{
-            //    Console.ForegroundColor = ConsoleColor.Green;
-            //    Console.WriteLine("FELICIDADES, HAS GANADO");
-            //    Console.ResetColor();
-            //    break;
-            //}
-            //else if (intentos == 6)
-            //{
-            //    Console.ForegroundColor = ConsoleColor.Red;
-            //    Console.WriteLine("HAS PERDIDO, LA PALABRA ERA: " + palabraSeleccionada);
-            //    Console.ResetColor();
-            //}
-            //if (!adivinado)
-            //{
-            //    Console.ForegroundColor = ConsoleColor.Red;
-            //    Console.WriteLine($"¡Oh no! La palabra era:" + palabraSeleccionada);
-            //    Console.ResetColor();
-            //}
-
-            //Console.WriteLine("\nPresiona cualquier tecla para salir...");
             Console.Clear();
             Console.ReadKey();
 

@@ -120,73 +120,7 @@ namespace Proyecto_Sem13
             Console.WriteLine("× = Letra no existe en la palabra\n");
             PalabraSecreta.Intentos();
             Console.ReadKey();
-            /*while (intentos < intentosMaximos && !adivinado)
-            {
-                intentos++;
-
-                string intento;
-                do
-                {
-                    Console.Write("Intento {intentos}: ");
-                    intento = Console.ReadLine();
-
-                    if (string.IsNullOrEmpty(intento))
-                    {
-                        Console.WriteLine("No puedes dejar el espacio vacío");
-                    }
-                    else if (intento.Length != 5)
-                    {
-                        Console.WriteLine("La palabra debe tener exactamente 5 letras");
-                    }
-
-                } while (string.IsNullOrEmpty(intento) || intento.Length != 5);
-
-                intento = intento.ToUpper();
-                Console.WriteLine("Pistas:");
-                for (int i = 0; i < 5; i++)
-                {
-                    if (intento[i] == PalabraSecreta)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("✓ ");
-                    }
-                    else if (palabraSecreta.Contains(intento[i].ToString()))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write("~ ");
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("× ");
-                    }
-                    Console.ResetColor();
-                }
-                Console.WriteLine("\n");
-
-                if (intento == palabraSecreta)
-                {
-                    adivinado = true;
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("¡Felicidades! ¡Adivinaste la palabra!");
-                    Console.Beep(700, 400);
-                    Console.Beep(800, 500);
-                    Console.Beep(900, 800);
-                    Console.Beep(1000, 1000);
-                    Console.ResetColor();
-                }
-            }
-
-            if (!adivinado)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"¡Oh no! La palabra era: {palabraSecreta}");
-                Console.ResetColor();
-            }
-
-            Console.WriteLine("\nPresiona cualquier tecla para salir...");
-            Console.Clear();
-            Console.ReadKey();*/
+           
 
         }
         static void AdivinaElNumero()
@@ -197,7 +131,10 @@ namespace Proyecto_Sem13
             Console.WriteLine(numAlt);
             do
             {
-                Console.WriteLine("Ingrese un número del 1 al 20: ");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("\t\t*****ADIVINA EL NÚMERO*****\n");
+                Console.ResetColor();
+                Console.WriteLine("* Ingrese un número del 1 al 20: \n");
                 numIng = int.Parse(Console.ReadLine());
                 if (numIng == numAlt)
                 {
@@ -216,38 +153,41 @@ namespace Proyecto_Sem13
                 {
                     if (numIng < numAlt)
                     {
-                        Console.WriteLine("INGRESO UN N° MAYOR AL INGRESADO");
+                        Console.ForegroundColor= ConsoleColor.DarkYellow;
+                        Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
+                        Console.ResetColor();
                     }
                     else
                     {
-                        Console.WriteLine("INGRESO UN N° MENOR AL IGRESADO");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
+                        Console.ResetColor();
                     }
                 }
-
             }
             while (numAlt != numIng);
-            Thread.Sleep(3000);
-            Console.Clear();
-            Console.ReadKey();
         }
         static void PiedraPaperlTijera()
         {
             int opcion;
             do
             {
-                int intentosMaximos = 3;
-                int intentos = 0;
                 string[] opciones = new string[3];
                 opciones[0] = "piedra";
                 opciones[1] = "papel";
                 opciones[2] = "tijera";
                 Random random = new Random();
                 string computadora = opciones[random.Next(0, 3)];
-
-                Console.WriteLine("Elige una opción: Piedra, Papel o Tijera\n");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("\t\t\t*****PIEDRA, PAPEL O TIJERA :D *****\n");
+                Console.ResetColor();
+                Console.WriteLine("Elige una opción: \n");
+                Console.WriteLine("* PIEDRA\n");
+                Console.WriteLine("* PAPEL\n");
+                Console.WriteLine("* TIJERA\n");
                 string jugador = Console.ReadLine();
 
-                Console.WriteLine("La computadora eligió: " + computadora+"\n");
+                Console.WriteLine("\nLa computadora eligió: " + computadora+"\n");
 
                 Class1 class1 = new Class1();
                 class1.piedraPapelTijera(computadora, jugador);

@@ -61,7 +61,9 @@ namespace Proyecto_Sem13
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("║                      > 3)PIEDRA, PAPE O TIJERA                         ║");
                         Console.WriteLine("║                                                                        ║");
-                        Console.WriteLine("║                      > 4)SALIR DEL JUEGO                               ║");
+                        Console.WriteLine("║                      > 4)PAR O IMPAR                                   ║");
+                        Console.WriteLine("║                                                                        ║");
+                        Console.WriteLine("║                      > 5)SALIR DEL JUEGO                               ║");
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝\n");
                         Console.WriteLine("");
@@ -82,6 +84,9 @@ namespace Proyecto_Sem13
                                 PiedraPaperlTijera();
                                 break;
                             case 4:
+                                Par_o_Impar();
+                                break;
+                            case 5:
                                 Console.Write("SALIENDO.....");
                                 Thread.Sleep(1000);
                                 Console.Clear();
@@ -212,6 +217,76 @@ namespace Proyecto_Sem13
             }
             while (opcion!=0);
             Console.Clear();
+        }
+        static void Par_o_Impar()
+        {
+            string seguir = "s";
+
+            while (seguir == "s")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("\t\t*****PAR O IMPAR*****\n");
+                Console.ResetColor();
+                Console.WriteLine("Escribe par o impar:");
+                string eleccion;
+                eleccion = Console.ReadLine();
+
+                Console.WriteLine("Elige un número del 1 al 100");
+                int numeroUsuario;
+                numeroUsuario = Convert.ToInt32(Console.ReadLine());
+                if (numeroUsuario < 100)
+                {
+
+                Random r = new Random();
+                int numeroMaquina;
+                numeroMaquina = r.Next(1, 10);
+                int suma = numeroUsuario + numeroMaquina;
+
+                Console.WriteLine("Tu numero: " + numeroUsuario);
+                Console.WriteLine("Número de la maquina: " + numeroMaquina);
+                Console.WriteLine("Suma total: " + suma);
+
+                if (suma % 2 == 0)
+                {
+                    Console.WriteLine("El resultado es PAR.");
+                    if (eleccion == "par")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(" ¡Ganaste mano!");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(" Perdiste, causa.");
+                        Console.ResetColor();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("El resultado es IMPAR.");
+                    if (eleccion == "impar")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("¡Ganaste mano!");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Perdiste causa.");
+                        Console.ResetColor();
+                    }
+                }
+
+                Console.WriteLine("\n¿Quieres jugar otra vez? (S o N)");
+                seguir = Console.ReadLine();
+                Console.Clear();
+                }else
+                {
+                    Console.WriteLine("NUMERO INCORRECTO");
+                }
+            }
         }
     }
 }

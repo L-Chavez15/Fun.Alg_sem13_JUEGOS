@@ -18,8 +18,8 @@ namespace Proyecto_Sem13
         static void Interfas()
         {
 
-            SoundPlayer sonido = new SoundPlayer("song1.wav");
-            sonido.Play();
+            //SoundPlayer sonido = new SoundPlayer("song1.wav");
+            //sonido.Play();
             //Thread.Sleep(5000);
             //sonido.Stop();
             int inicio;
@@ -130,12 +130,14 @@ namespace Proyecto_Sem13
         }
         static void AdivinaElNumero()
         {
+            
             int numAlt, numIng;
             Random R = new Random();
             numAlt = R.Next(1, 21);
             Console.WriteLine(numAlt);
             do
             {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("\t\t*****ADIVINA EL NÚMERO*****\n");
                 Console.ResetColor();
@@ -169,14 +171,17 @@ namespace Proyecto_Sem13
                         Console.ResetColor();
                     }
                 }
+                Console.ReadKey();
             }
             while (numAlt != numIng);
+            Console.Clear();
         }
         static void PiedraPaperlTijera()
         {
             int opcion;
             do
             {
+                Console.Clear();
                 string[] opciones = new string[3];
                 opciones[0] = "piedra";
                 opciones[1] = "papel";
@@ -186,13 +191,17 @@ namespace Proyecto_Sem13
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("\t\t\t*****PIEDRA, PAPEL O TIJERA :D *****\n");
                 Console.ResetColor();
-                Console.WriteLine("Elige una opción: \n");
-                Console.WriteLine("* PIEDRA\n");
-                Console.WriteLine("* PAPEL\n");
-                Console.WriteLine("* TIJERA\n");
+                Console.WriteLine("*) PIEDRA\n");
+                Console.WriteLine("*) PAPEL\n");
+                Console.WriteLine("*) TIJERA\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Escribe una opción: \n");
+                Console.ResetColor();
                 string jugador = Console.ReadLine();
-
-                Console.WriteLine("\nLa computadora eligió: " + computadora+"\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLa computadora eligió: ");
+                Console.ResetColor();
+                Console.WriteLine(computadora+"\n");
 
                 Class1 class1 = new Class1();
                 class1.piedraPapelTijera(computadora, jugador);
@@ -202,6 +211,7 @@ namespace Proyecto_Sem13
                 Console.WriteLine("1. Si");
                 Console.WriteLine("0. No\n");
                 opcion = int.Parse(Console.ReadLine());
+                Console.ReadKey();
                 switch (opcion)
                 {
                     case 1:
@@ -214,9 +224,10 @@ namespace Proyecto_Sem13
                         Console.WriteLine("INGRESA UN VALOR VALIDO\n");
                         break;
                 }
+                Console.ReadKey();
+
             }
             while (opcion!=0);
-            Console.Clear();
         }
         static void Par_o_Impar()
         {

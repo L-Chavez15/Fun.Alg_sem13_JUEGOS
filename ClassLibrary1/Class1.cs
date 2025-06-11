@@ -30,21 +30,21 @@ namespace ClassLibrary1
             else if (op1 == "papel" && op2 == "piedra")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("PERDISTE\n");
+                Console.WriteLine("******PERDISTE******\n");
                 Console.ResetColor();
                 return op1;
             }
             else if (op1 == op2)
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("EMPATE\n");
+                Console.WriteLine("******EMPATE******\n");
                 Console.ResetColor();
                 return "Empate";
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("GANASTE\n");
+                Console.WriteLine("******GANASTE******\n");
                 Console.ResetColor();
                 return "Jugador 2 gana";
             }

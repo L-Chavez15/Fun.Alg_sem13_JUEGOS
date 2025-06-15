@@ -429,6 +429,18 @@ namespace Proyecto_Sem13
                     Console.ResetColor();
                     Thread.Sleep(2000);
                 }
+
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("¡FELICIDADES! Encontraste todas las parejas.\n");
+                Console.ResetColor();
+                for (int i = 0; i < 8; i++)
+                {
+                    Console.Write(" " + letras[i] + " ");
+                    if ((i + 1) % 4 == 0)
+                        Console.WriteLine();
+                }
             }
         }
     }

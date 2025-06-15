@@ -360,7 +360,7 @@ namespace Proyecto_Sem13
                         Console.WriteLine();
                 }
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\n SELECIONA DOS CARTAS DEL 1 AL 7 ");
+                Console.WriteLine("\n SELECIONA DOS CARTAS DEL 0 AL 7 ");
                 Console.ResetColor();
 
                 int carta1 = -1;

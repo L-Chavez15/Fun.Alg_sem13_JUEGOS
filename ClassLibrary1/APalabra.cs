@@ -8,7 +8,7 @@ namespace ClassLibrary1
 {
     public class APalabra
     {
-        string[] AP = { "perro", "flora", "campo", "arbol", "libro", "carro", "china", "japon", "mouse", "reloj" };
+        string[] AP = { "perro", "fuego", "campo", "arbol", "libro", "carro", "china", "japon", "mouse", "reloj" };
 
         public void Intentos()
         {
@@ -72,8 +72,8 @@ namespace ClassLibrary1
                     }
                 }
             }
-            Console.Clear();
-            Console.ReadKey();
+            //Console.Clear();
+            //Console.ReadKey();
 
         }
     }

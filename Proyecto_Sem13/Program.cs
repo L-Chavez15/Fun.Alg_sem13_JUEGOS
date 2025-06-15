@@ -25,6 +25,7 @@ namespace Proyecto_Sem13
             int inicio;
             do
             {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("╔════════════════════════════════════════════════════════════════════════╗");
                 Console.WriteLine("║************************************************************************║");
@@ -63,12 +64,11 @@ namespace Proyecto_Sem13
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("║                      > 4)PAR O IMPAR                                   ║");
                         Console.WriteLine("║                                                                        ║");
-                        Console.WriteLine("║                      > 5)SALIR DEL JUEGO                               ║");
+                        Console.WriteLine("║                      > 5)JUEGO DE MEMORIA                              ║");
                         Console.WriteLine("║                                                                        ║");
+                        Console.WriteLine("║                      > 6)SALIR DEL JUEGO                               ║");
                         Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝\n");
                         Console.WriteLine("");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.BackgroundColor = ConsoleColor.Black;
                         int juego = int.Parse(Console.ReadLine());
                         Console.Clear();
                         switch (juego)
@@ -87,6 +87,9 @@ namespace Proyecto_Sem13
                                 Par_o_Impar();
                                 break;
                             case 5:
+                                Memoria();
+                                break; 
+                            case 6:
                                 Console.Write("SALIENDO.....");
                                 Thread.Sleep(1000);
                                 Console.Clear();
@@ -107,12 +110,14 @@ namespace Proyecto_Sem13
                         Console.ReadKey();
                         break;
                 }
+                Console.ReadKey();
             }
             while (inicio != 2);
 
         }
         static void AdivinaLaPalabra()
         {
+            Console.Clear();
             APalabra PalabraSecreta = new APalabra();
             int intentosMaximos = 6;
             int intentos = 0;
@@ -125,8 +130,6 @@ namespace Proyecto_Sem13
             Console.WriteLine("× = Letra no existe en la palabra\n");
             PalabraSecreta.Intentos();
             Console.ReadKey();
-           
-
         }
         static void AdivinaElNumero()
         {
@@ -174,7 +177,6 @@ namespace Proyecto_Sem13
                 Console.ReadKey();
             }
             while (numAlt != numIng);
-            Console.Clear();
         }
         static void PiedraPaperlTijera()
         {
@@ -235,6 +237,7 @@ namespace Proyecto_Sem13
 
             while (seguir == "s")
             {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("\t\t*****PAR O IMPAR*****\n");
                 Console.ResetColor();
@@ -296,6 +299,135 @@ namespace Proyecto_Sem13
                 }else
                 {
                     Console.WriteLine("NUMERO INCORRECTO");
+                }
+                Console.ReadKey();
+            }
+        }
+        static void Memoria()
+        {
+            List<char> letras = new List<char>()
+
+        { 'A', 'A', 'B', 'B', 'C', 'C', 'D', 'D' };
+
+
+            Random rand = new Random();
+            for (int i = 0; i < letras.Count; i++)
+            {
+                int j = rand.Next(letras.Count);
+                char temp = letras[i];
+                letras[i] = letras[j];
+                letras[j] = temp;
+            }
+
+            List<bool> Encontrados = new List<bool>();
+            for (int i = 0; i < 8; i++)
+            {
+                Encontrados.Add(false);
+            }
+
+
+            Console.WriteLine("MEMORIZA LAS CARTAS TIENES 5 SEGUNDOS :");
+            for (int i = 0; i < 8; i++)
+            {
+                Console.Write(" " + letras[i] + " ");
+                if ((i + 1) % 4 == 0)
+                    Console.WriteLine();
+            }
+
+            Thread.Sleep(5000);
+            Console.Clear();
+
+            int parejasEncontradas = 0;
+
+            while (parejasEncontradas < 4)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("TABLERO ACTUAL:");
+                Console.ResetColor();
+                for (int i = 0; i < 8; i++)
+                {
+                    if (Encontrados[i])
+                    {
+                        Console.Write(" " + letras[i] + " ");
+                    }
+                    else
+                    {
+                        Console.Write("[" + i + "]");
+                    }
+
+                    if ((i + 1) % 4 == 0)
+                        Console.WriteLine();
+                }
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n SELECIONA DOS CARTAS DEL 1 AL 7 ");
+                Console.ResetColor();
+
+                int carta1 = -1;
+                while (true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("PRIMERA CARTA: ");
+                    Console.ResetColor();
+                    string entrada1 = Console.ReadLine();
+                    if (int.TryParse(entrada1, out carta1) && carta1 >= 0 && carta1 < 8 && !Encontrados[carta1])
+                        break;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("ENTRADA INVALIDA O YA SE DESCUBRIO...INTENTA OTRA VEZ....");
+                    Console.ResetColor();
+                }
+
+
+                int carta2 = -1;
+                while (true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("SEGUNDA CARTA: ");
+                    Console.ResetColor();
+                    string entrada2 = Console.ReadLine();
+                    if (int.TryParse(entrada2, out carta2) && carta2 >= 0 && carta2 < 8 && carta2 != carta1 && !Encontrados[carta2])
+                        break;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("ENTRADA INVALIDA O YA SE DESCUBRIO...INTENTA OTRA VEZ....");
+
+                }
+
+
+                Console.Clear();
+                for (int i = 0; i < 8; i++)
+                {
+                    if (i == carta1 || i == carta2 || Encontrados[i])
+                    {
+                        Console.Write(" " + letras[i] + " ");
+                    }
+                    else
+                    {
+                        Console.Write("[" + i + "]");
+                    }
+
+                    if ((i + 1) % 4 == 0)
+                        Console.WriteLine();
+                }
+
+
+                if (letras[carta1] == letras[carta2])
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\n...¡MUY BIEN, ENCONTRATE UNA PAREJA...");
+
+                    Encontrados[carta1] = true;
+                    Encontrados[carta2] = true;
+                    parejasEncontradas++;
+                    Console.WriteLine("\nPPRESIONA UNA TECLA PARA CONTINUAR...");
+                    Console.ResetColor();
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nNO SON IGUALES. VUELVE A INTENTARLO...");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
                 }
             }
         }

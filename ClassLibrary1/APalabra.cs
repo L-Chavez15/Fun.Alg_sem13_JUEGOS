@@ -17,7 +17,7 @@ namespace ClassLibrary1
             string palabraSeleccionada = AP[SP];
             int intentos = 0;
             bool adivinado = false;
-            Console.WriteLine(palabraSeleccionada);
+            //Console.WriteLine(palabraSeleccionada);
 
             for (intentos = 0; intentos < 6; intentos++)
             {

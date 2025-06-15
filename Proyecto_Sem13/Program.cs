@@ -123,8 +123,12 @@ namespace Proyecto_Sem13
             int intentosMaximos = 6;
             int intentos = 0;
             bool adivinado = false;
+            Console.ForegroundColor= ConsoleColor.DarkCyan;
             Console.WriteLine("\t*****Adivina la palabra de 5 letras*****\n");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("IMPORTANTE:\tTienes 6 intentos\n");
+            Console.ResetColor();
             Console.WriteLine("Pistas:");
             Console.WriteLine("✓ = Letras correcta ");
             Console.WriteLine("× = Letra no existe en la palabra\n");

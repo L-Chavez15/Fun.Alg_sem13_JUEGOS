@@ -18,8 +18,8 @@ namespace Proyecto_Sem13
         static void Interfas()
         {
 
-            //SoundPlayer sonido = new SoundPlayer("song1.wav");
-            //sonido.Play();
+            SoundPlayer sonido = new SoundPlayer("song1.wav");
+            sonido.Play();
             //Thread.Sleep(5000);
             //sonido.Stop();
             int inicio;
@@ -69,6 +69,7 @@ namespace Proyecto_Sem13
                         Console.WriteLine("║                      > 6)SALIR DEL JUEGO                               ║");
                         Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝\n");
                         Console.WriteLine("");
+                        Console.ResetColor();
                         int juego = int.Parse(Console.ReadLine());
                         Console.Clear();
                         switch (juego)
@@ -122,11 +123,10 @@ namespace Proyecto_Sem13
             int intentosMaximos = 6;
             int intentos = 0;
             bool adivinado = false;
-            Console.WriteLine("Adivina la palabra de 5 letras");
-            Console.WriteLine("Tienes 6 intentos\n");
+            Console.WriteLine("\t*****Adivina la palabra de 5 letras*****\n");
+            Console.WriteLine("IMPORTANTE:\tTienes 6 intentos\n");
             Console.WriteLine("Pistas:");
-            Console.WriteLine("✓ = Letra correcta en posición correcta");
-            Console.WriteLine("~ = Letra correcta en posición incorrecta");
+            Console.WriteLine("✓ = Letras correcta ");
             Console.WriteLine("× = Letra no existe en la palabra\n");
             PalabraSecreta.Intentos();
             Console.ReadKey();

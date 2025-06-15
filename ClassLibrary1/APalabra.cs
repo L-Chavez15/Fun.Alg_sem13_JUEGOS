@@ -26,12 +26,16 @@ namespace ClassLibrary1
                 op = Console.ReadLine();
                 if (op == "")
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("NO PUEDES DEJAR UN ESPACIO EN BLANCO");
+                    Console.ResetColor();
                     intentos--;
                 }
                 else if (op.Length != 5)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("INGRESE UNA PALABRA DE 5 LETRAS ");
+                    Console.ResetColor();
                     intentos--;
                 } else
                 {

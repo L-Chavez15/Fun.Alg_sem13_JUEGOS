@@ -67,6 +67,7 @@ namespace Proyecto_Sem13
                         Console.WriteLine("║                      > 5)JUEGO DE MEMORIA                              ║");
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("║                      > 6)SALIR DEL JUEGO                               ║");
+                        Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝\n");
                         Console.WriteLine("");
                         Console.ResetColor();

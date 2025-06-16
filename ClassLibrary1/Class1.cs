@@ -52,6 +52,8 @@ namespace ClassLibrary1
         public void salida()
         {
             Console.WriteLine("\t\t\t\t*********** ESPERAMOS VERTE DE NUEVO ***********\t\t\t\t \n");
+            Console.WriteLine("\t\t\t\t\t*********** ADIOS ***********\t\t\t\t\t\t \n");
+            Console.ReadKey();
         }
     }
 }

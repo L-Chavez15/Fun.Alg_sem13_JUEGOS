@@ -22,7 +22,7 @@ namespace ClassLibrary1
             for (intentos = 0; intentos < 6; intentos++)
             {
                 string op;
-                Console.WriteLine("Intento" + (intentos + 1) + ": ");
+                Console.WriteLine("Intento " + (intentos + 1) + ": ");
                 op = Console.ReadLine();
                 if (op == "")
                 {

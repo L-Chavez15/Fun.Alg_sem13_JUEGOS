@@ -18,8 +18,8 @@ namespace Proyecto_Sem13
         static void Interfas()
         {
 
-            SoundPlayer sonido = new SoundPlayer("song1.wav");
-            sonido.Play();
+            //SoundPlayer sonido = new SoundPlayer("song1.wav");
+            //sonido.Play();
             //Thread.Sleep(5000);
             //sonido.Stop();
             int inicio;
@@ -137,50 +137,26 @@ namespace Proyecto_Sem13
         }
         static void AdivinaElNumero()
         {
-            
-            int numAlt, numIng;
-            Random R = new Random();
-            numAlt = R.Next(1, 21);
-            Console.WriteLine(numAlt);
+            AdNumero E = new AdNumero();
+            int op;
+            int eleccion ;
             do
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Console.WriteLine("\t\t*****ADIVINA EL NÚMERO*****\n");
-                Console.ResetColor();
-                Console.WriteLine("* Ingrese un número del 1 al 20: \n");
-                numIng = int.Parse(Console.ReadLine());
-                if (numIng == numAlt)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("ADIVINASTE!!!! ");
-                    Console.Beep(700, 400);
-                    Console.Beep(800, 500);
-                    Console.Beep(900, 800);
-                    Console.Beep(1000, 1000);
+                Console.WriteLine("\t*****ADIVINA EL NÚMERO*****");
+                Console.WriteLine("1. NIVEL 1");
+                Console.WriteLine("2. NIVEL 2");
+                Console.WriteLine("3. NIVEL 3");
+                Console.WriteLine("4. NIVEL IMPOSIBLE");
+                Console.WriteLine("0. SALIR");
+                Console.Write("ingrese una opcion: ");
+                op = int.Parse(Console.ReadLine());
 
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.BackgroundColor = ConsoleColor.Black;
-
-                }
-                else
-                {
-                    if (numIng < numAlt)
-                    {
-                        Console.ForegroundColor= ConsoleColor.DarkYellow;
-                        Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
-                        Console.ResetColor();
-                    }
-                }
+                E.Elección(op);
                 Console.ReadKey();
+
             }
-            while (numAlt != numIng);
+            while (op != 0);
         }
         static void PiedraPaperlTijera()
         {

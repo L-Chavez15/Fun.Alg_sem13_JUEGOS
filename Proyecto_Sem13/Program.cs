@@ -143,12 +143,14 @@ namespace Proyecto_Sem13
             do
             {
                 Console.Clear();
+                Console.ForegroundColor=ConsoleColor.DarkCyan;
                 Console.WriteLine("\t*****ADIVINA EL NÚMERO*****");
+                Console.ResetColor();
                 Console.WriteLine("1. NIVEL 1");
                 Console.WriteLine("2. NIVEL 2");
                 Console.WriteLine("3. NIVEL 3");
                 Console.WriteLine("4. NIVEL IMPOSIBLE");
-                Console.WriteLine("0. SALIR");
+                Console.WriteLine("0. SALIR\n");
                 Console.Write("ingrese una opcion: ");
                 op = int.Parse(Console.ReadLine());
 

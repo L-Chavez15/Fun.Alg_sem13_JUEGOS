@@ -18,10 +18,10 @@ namespace Proyecto_Sem13
         static void Interfas()
         {
 
-            //SoundPlayer sonido = new SoundPlayer("song1.wav");
-            //sonido.Play();
+            SoundPlayer sonido = new SoundPlayer("song1.wav");
+            sonido.Play();
             //Thread.Sleep(5000);
-            //sonido.Stop();
+            
             int inicio;
             do
             {
@@ -66,7 +66,7 @@ namespace Proyecto_Sem13
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("║                      > 5)JUEGO DE MEMORIA                              ║");
                         Console.WriteLine("║                                                                        ║");
-                        Console.WriteLine("║                      > 6)SALIR DEL JUEGO                               ║");
+                        Console.WriteLine("║                      > 6)SALIR AL MENU PRINCIPAL                       ║");
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝\n");
                         Console.WriteLine("");
@@ -92,6 +92,7 @@ namespace Proyecto_Sem13
                                 Memoria();
                                 break; 
                             case 6:
+                                sonido.Stop();
                                 Console.Write("SALIENDO.....");
                                 Thread.Sleep(1000);
                                 Console.Clear();
@@ -101,6 +102,7 @@ namespace Proyecto_Sem13
                         }
                         break;
                     case 2:
+                        sonido.Stop();
                         Class1 P = new Class1();
                         P.salida();
                         break;

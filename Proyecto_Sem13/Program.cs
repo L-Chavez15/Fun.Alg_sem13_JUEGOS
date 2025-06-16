@@ -98,6 +98,9 @@ namespace Proyecto_Sem13
                                 Console.Clear();
                                 break;
                             default:
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("\t*****INGRESE UN VALOR VÁLIDO*****");
+                                Console.ResetColor();
                                 break;
                         }
                         break;
@@ -108,7 +111,7 @@ namespace Proyecto_Sem13
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\t\t\t\t******** ERROR, FALLA EN EL SISTEMA :C ******** ");
+                        Console.WriteLine("\t\t\t\t******** ERROR, INGRESE UN VALOR VÁLIDO :C ******** ");
                         Thread.Sleep(1000);
                         Console.Clear();
                         Console.ReadKey();

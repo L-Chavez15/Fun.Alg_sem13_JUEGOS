@@ -26,7 +26,7 @@ namespace ClassLibrary1
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 10*****\n");
                         Console.ResetColor();
-                        Console.WriteLine("* Ingrese un número del 1 al 20: \n");
+                        Console.WriteLine("* Ingrese un número del 1 al 10: \n");
                         numIng = int.Parse(Console.ReadLine());
                         if (numIng == numAlt)
                         {
@@ -59,7 +59,7 @@ namespace ClassLibrary1
                 case 2:
                     int nuAlt, nuIng;
                     Random random = new Random();
-                    nuAlt = random.Next(1, 31);
+                    nuAlt = random.Next(1, 21);
                     do
                     {
                         Console.Clear();
@@ -147,7 +147,7 @@ namespace ClassLibrary1
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 100*****\n");
                         Console.ResetColor();
-                        Console.WriteLine("* Ingrese un número del 1 al 20: \n");
+                        Console.WriteLine("* Ingrese un número del 1 al 100: \n");
                         Ing = int.Parse(Console.ReadLine());
                         if (Ing == Alt)
                         {

@@ -76,7 +76,7 @@ namespace ClassLibrary1
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 20: \n");
                         numIng = int.Parse(Console.ReadLine());
-                        if (numIng>10)
+                        if (numIng>20)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\n INGRESE UN NÚMERO DEL 1 AL 20\n");
@@ -125,9 +125,11 @@ namespace ClassLibrary1
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 50: \n");
                         numIng = int.Parse(Console.ReadLine());
-                        if (true)
+                        if (numIng>50)
                         {
+                            Console.ForegroundColor= ConsoleColor.Red;
                             Console.WriteLine("\nINGRESE UN NUMERO DEL 1 AL 50\n");
+                            Console.ResetColor();
                         }
                         else
                         {
@@ -172,7 +174,7 @@ namespace ClassLibrary1
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 100: \n");
                         numIng = int.Parse(Console.ReadLine());
-                        if (numIng>10)
+                        if (numIng>100)
                         {
                             Console.ForegroundColor= ConsoleColor.Red;
                             Console.WriteLine("\nINGRESE UN NÚMERO DEL 1 AL 100\n");

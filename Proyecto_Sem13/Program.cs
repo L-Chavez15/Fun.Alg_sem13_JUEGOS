@@ -60,7 +60,7 @@ namespace Proyecto_Sem13
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("║                      > 2)ADIVINA EL NÚMERO                             ║");
                         Console.WriteLine("║                                                                        ║");
-                        Console.WriteLine("║                      > 3)PIEDRA, PAPE O TIJERA                         ║");
+                        Console.WriteLine("║                      > 3)PIEDRA, PAPEL O TIJERA                        ║");
                         Console.WriteLine("║                                                                        ║");
                         Console.WriteLine("║                      > 4)PAR O IMPAR                                   ║");
                         Console.WriteLine("║                                                                        ║");

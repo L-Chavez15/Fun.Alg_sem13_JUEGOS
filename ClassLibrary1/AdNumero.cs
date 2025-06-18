@@ -8,7 +8,7 @@ namespace ClassLibrary1
 {
     public class AdNumero
     {
-        int eleccion;
+        int eleccion, numAlt, numIng;
         public void Elección(int op)
         {
             switch (op)
@@ -17,7 +17,6 @@ namespace ClassLibrary1
                     salida();
                     break;
                 case 1:
-                    int numAlt, numIng;
                     Random R = new Random();
                     numAlt = R.Next(1, 11);
                     do
@@ -28,38 +27,47 @@ namespace ClassLibrary1
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 10: \n");
                         numIng = int.Parse(Console.ReadLine());
-                        if (numIng == numAlt)
+                        if (numIng>10)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("ADIVINASTE!!!! ");
-
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.BackgroundColor = ConsoleColor.Black;
-
+                            Console.ForegroundColor= ConsoleColor.Red;
+                            Console.WriteLine("\n INGRESE UN NÚMERO DEL 1 AL 10\n");
+                            Console.ResetColor();
                         }
                         else
                         {
-                            if (numIng < numAlt)
+                            if (numIng == numAlt)
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
-                                Console.ResetColor();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("ADIVINASTE!!!! ");
+
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.BackgroundColor = ConsoleColor.Black;
+
                             }
                             else
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
-                                Console.ResetColor();
+                                if (numIng < numAlt)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
+                                    Console.ResetColor();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
+                                    Console.ResetColor();
+                                }
                             }
                         }
+                        
                         Console.ReadKey();
                     }
                     while (numAlt != numIng);
                     break;
                 case 2:
-                    int nuAlt, nuIng;
                     Random random = new Random();
-                    nuAlt = random.Next(1, 21);
+                    numAlt = random.Next(1, 21);
                     do
                     {
                         Console.Clear();
@@ -67,39 +75,48 @@ namespace ClassLibrary1
                         Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 30*****\n");
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 20: \n");
-                        nuIng = int.Parse(Console.ReadLine());
-                        if (nuIng == nuAlt)
+                        numIng = int.Parse(Console.ReadLine());
+                        if (numIng>10)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("ADIVINASTE!!!! ");
-
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.BackgroundColor = ConsoleColor.Black;
-
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\n INGRESE UN NÚMERO DEL 1 AL 20\n");
+                            Console.ResetColor();
                         }
                         else
                         {
-                            if (nuIng < nuAlt)
+                            if (numIng == numAlt)
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
-                                Console.ResetColor();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("ADIVINASTE!!!! ");
+
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.BackgroundColor = ConsoleColor.Black;
+
                             }
                             else
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
-                                Console.ResetColor();
+                                if (numIng < numAlt)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
+                                    Console.ResetColor();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
+                                    Console.ResetColor();
+                                }
                             }
                         }
+                        
                         Console.ReadKey();
                     }
-                    while (nuAlt != nuIng);
+                    while (numAlt != numIng);
                     break;
                 case 3:
-                    int nAlt, nIng;
                     Random N1 = new Random();
-                    nAlt = N1.Next(1, 51);
+                    numAlt = N1.Next(1, 51);
                     do
                     {
                         Console.Clear();
@@ -107,40 +124,46 @@ namespace ClassLibrary1
                         Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 50*****\n");
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 50: \n");
-                        nIng = int.Parse(Console.ReadLine());
-                        if (nIng == nAlt)
+                        numIng = int.Parse(Console.ReadLine());
+                        if (true)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("ADIVINASTE!!!! ");
-
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.BackgroundColor = ConsoleColor.Black;
-
+                            Console.WriteLine("\nINGRESE UN NUMERO DEL 1 AL 50\n");
                         }
                         else
                         {
-                            if (nIng < nAlt)
+                            if (numIng == numAlt)
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
-                                Console.ResetColor();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("ADIVINASTE!!!! ");
+
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.BackgroundColor = ConsoleColor.Black;
+
                             }
                             else
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
-                                Console.ResetColor();
+                                if (numIng < numAlt)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
+                                    Console.ResetColor();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
+                                    Console.ResetColor();
+                                }
                             }
                         }
                         Console.ReadKey();
                     }
-                    while (nAlt != nIng);
+                    while (numAlt != numIng);
                     break;
                 case 4:
-                    int Alt, Ing;
                     Random N2 = new Random();
-                    Alt = N2.Next(1, 101);
-                    Console.WriteLine(Alt);
+                    numAlt = N2.Next(1, 101);
+                    Console.WriteLine(numAlt);
                     do
                     {
                         Console.Clear();
@@ -148,34 +171,44 @@ namespace ClassLibrary1
                         Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 100*****\n");
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 100: \n");
-                        Ing = int.Parse(Console.ReadLine());
-                        if (Ing == Alt)
+                        numIng = int.Parse(Console.ReadLine());
+                        if (numIng>10)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("ADIVINASTE!!!! ");
-
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.BackgroundColor = ConsoleColor.Black;
-
+                            Console.ForegroundColor= ConsoleColor.Red;
+                            Console.WriteLine("\nINGRESE UN NÚMERO DEL 1 AL 100\n");
+                            Console.ResetColor();
                         }
                         else
                         {
-                            if (Ing < Alt)
+                            if (numIng == numAlt)
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
-                                Console.ResetColor();
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("ADIVINASTE!!!! ");
+
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.BackgroundColor = ConsoleColor.Black;
+
                             }
                             else
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
-                                Console.ResetColor();
+                                if (numIng < numAlt)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MAYOR AL INGRESADO\n");
+                                    Console.ResetColor();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("\nINGRESO UN N° MENOR AL IGRESADO\n");
+                                    Console.ResetColor();
+                                }
                             }
                         }
+                        
                         Console.ReadKey();
                     }
-                    while (Alt != Ing);
+                    while (numAlt != numIng);
                     break;
                 default:
                     Console.ForegroundColor= ConsoleColor.Red;

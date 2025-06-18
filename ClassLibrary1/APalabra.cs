@@ -27,14 +27,14 @@ namespace ClassLibrary1
                 if (op == "")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("NO PUEDES DEJAR UN ESPACIO EN BLANCO");
+                    Console.WriteLine("NO PUEDES DEJAR UN ESPACIO EN BLANCO\n");
                     Console.ResetColor();
                     intentos--;
                 }
                 else if (op.Length != 5)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("INGRESE UNA PALABRA DE 5 LETRAS ");
+                    Console.WriteLine("INGRESE UNA PALABRA DE 5 LETRAS\n");
                     Console.ResetColor();
                     intentos--;
                 } else
@@ -42,7 +42,7 @@ namespace ClassLibrary1
                     if (palabraSeleccionada==op)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("FELICIDADES, HAS GANADO");
+                        Console.WriteLine("\n*****FELICIDADES, HAS GANADO****");
                         Console.ResetColor();
                         Console.ReadKey();
                         break;

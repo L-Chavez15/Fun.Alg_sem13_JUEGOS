@@ -72,7 +72,7 @@ namespace ClassLibrary1
                     {
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
-                        Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 30*****\n");
+                        Console.WriteLine("\t\t*****ADIVINA EL NÚMERO DEL 1 AL 20*****\n");
                         Console.ResetColor();
                         Console.WriteLine("* Ingrese un número del 1 al 20: \n");
                         numIng = int.Parse(Console.ReadLine());

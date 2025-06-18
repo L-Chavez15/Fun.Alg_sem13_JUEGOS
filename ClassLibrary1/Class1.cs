@@ -13,28 +13,28 @@ namespace ClassLibrary1
         public string piedraPapelTijera(string op1, string op2)
         {
             
-            if (op1 == "piedra" && op2 == "tijera")
+            if (op1.ToLower() == "piedra" && op2.ToLower() == "tijera")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("PERDISTE\n");
                 Console.ResetColor();
                 return op1;
             }
-            else if (op1 == "tijera" && op2 == "papel")
+            else if (op1.ToLower() == "tijera" && op2.ToLower() == "papel")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("PERDISTE\n");
                 Console.ResetColor();
                 return op1;
             }
-            else if (op1 == "papel" && op2 == "piedra")
+            else if (op1.ToLower() == "papel" && op2.ToLower() == "piedra")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("******PERDISTE******\n");
                 Console.ResetColor();
                 return op1;
             }
-            else if (op1 == op2)
+            else if (op1.ToLower() == op2.ToLower())
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("******EMPATE******\n");

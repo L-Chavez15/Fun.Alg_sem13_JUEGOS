@@ -18,7 +18,7 @@ namespace Proyecto_Sem13
         static void Interfas()
         {
 
-            SoundPlayer sonido = new SoundPlayer("song1.wav");
+            SoundPlayer sonido = new SoundPlayer("SONG.wav");
             sonido.Play();
             //Thread.Sleep(5000);
             
@@ -189,7 +189,7 @@ namespace Proyecto_Sem13
                 Console.ResetColor();
                 string jugador = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\nLa computadora eligió: ");
+                Console.WriteLine("\nLa computadora eligió: \n");
                 Console.ResetColor();
                 Console.WriteLine(computadora+"\n");
 
@@ -201,7 +201,6 @@ namespace Proyecto_Sem13
                 Console.WriteLine("1. Si");
                 Console.WriteLine("0. No\n");
                 opcion = int.Parse(Console.ReadLine());
-                Console.ReadKey();
                 switch (opcion)
                 {
                     case 1:
@@ -235,7 +234,7 @@ namespace Proyecto_Sem13
 
                 Console.WriteLine("Elige un número del 1 al 100");
                 int numeroUsuario;
-                numeroUsuario = Convert.ToInt32(Console.ReadLine());
+                numeroUsuario = int.Parse(Console.ReadLine());
                 if (numeroUsuario < 100)
                 {
 
@@ -297,7 +296,7 @@ namespace Proyecto_Sem13
 
         { 'A', 'A', 'B', 'B', 'C', 'C', 'D', 'D' };
 
-
+            
             Random rand = new Random();
             for (int i = 0; i < letras.Count; i++)
             {
@@ -312,8 +311,10 @@ namespace Proyecto_Sem13
             {
                 Encontrados.Add(false);
             }
-
-
+            
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("\t*****JUEGO DE MEMORIA*****\n");
+            Console.ResetColor();
             Console.WriteLine("MEMORIZA LAS CARTAS TIENES 5 SEGUNDOS :");
             for (int i = 0; i < 8; i++)
             {
